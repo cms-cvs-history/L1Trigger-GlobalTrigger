@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+  <header>
+    <vhdl_path>D:\..\Gtl6u\VHDL-library\Version4.x</vhdl_path>
+    <gtl_setup_name>orct3_muon</gtl_setup_name>
+    <version max="FFFFFFFF" min="00000000">0000000D</version>
+    <designer_name>rohringer</designer_name>
+    <designer_date>15.09.05</designer_date>
+    <designer_comments>1mu 2mu handcorr muon pt GUI/GTS corr pin corr </designer_comments>
+  </header>
+    <designer_date>13.09.05</designer_date>
+  <chip_def>
+    <chip_1>
+      <ca1>connected</ca1>
+      <ca2>connected</ca2>
+      <ca3>connected</ca3>
+      <ca4/>
+    </chip_1>
+    <chip_2>
+      <ca1>connected</ca1>
+      <ca2/>
+      <ca3>connected</ca3>
+      <ca4>connected</ca4>
+    </chip_2>
+  </chip_def>
+  <!-- old
+  <ca_input>
+    <ca1>eg</ca1>
+    <ca2>ieg</ca2>
+    <ca3>jet</ca3>
+    <ca4>free</ca4>
+  </ca_input>
+-->
+  <ca_input>
+    <ca1>eg</ca1>
+    <ca2>ieg</ca2>
+    <ca3>jet</ca3>
+    <ca4>tau</ca4>
+  </ca_input>
+  <algos>
+    <algo_1>       prealgo_name_1
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="1"/>
+    </algo_1>
+    <algo_2>       prealgo_name_2
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="2"/>
+    </algo_2>
+    <algo_3>       prealgo_name_3
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="3"/>
+    </algo_3>
+    <algo_3a>       prealgo_name_3a
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="4"/>
+    </algo_3a>
+    <algo_3b>       prealgo_name_3b
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="5"/>
+    </algo_3b>
+    <algo_5>       prealgo_name_5
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="6"/>
+    </algo_5>
+    <algo_6>       prealgo_name_6
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="7"/>
+    </algo_6>
+    <algo_7>       prealgo_name_7
+      <!-- output of ALGOA 0 ... 31 -> 0 ... 31 -->
+      <!-- output of ALGOB 0 ... 31 -> 32 ... 63 -->
+      <output nr="8"/>
+    </algo_7>
+  </algos>
+  <condition_chip_1>
+    <prealgos>
+      <!-- the prealgos names must be unique for all cond_chips -->
+      <prealgo_name_1>       (cjet2s OR cjet1a OR cjet1b ) <output_pin nr="0" pin="a"/>
+        <output_pin nr="1" pin="b"/>
+      </prealgo_name_1>
+      <prealgo_name_2>       (eg11 OR eg12 OR eg13 )<output_pin nr="0" pin="a"/>
+        <output_pin nr="2" pin="b"/>
+      </prealgo_name_2>
+      <prealgo_name_3>       (ieg11 OR ieg12 OR ieg13)<output_pin nr="0" pin="a"/>
+        <output_pin nr="3" pin="b"/>
+      </prealgo_name_3>
+      <prealgo_name_3a>       (deta)<output_pin nr="0" pin="a"/>
+        <output_pin nr="4" pin="b"/>
+      </prealgo_name_3a>
+      <prealgo_name_3b>       (dphi)<output_pin nr="0" pin="a"/>
+        <output_pin nr="5" pin="b"/>
+      </prealgo_name_3b>
+      <prealgo_name_5>       (cjet4)<output_pin nr="0" pin="a"/>
+        <output_pin nr="6" pin="b"/>
+      </prealgo_name_5>
+      <prealgo_name_6>       (Muon_1_1)<output_pin nr="0" pin="a"/>
+        <output_pin nr="7" pin="b"/>
+      </prealgo_name_6>
+      <prealgo_name_7>       (Muon_2_1)<output_pin nr="0" pin="a"/>
+        <output_pin nr="8" pin="b"/>
+      </prealgo_name_7>
+      <!--<prealgo_name_60>    (cjet40) <output_pin nr="0" pin="a"/>
+        <output_pin nr="9" pin="b"/>
+     </prealgo_name_60>  -->
+    </prealgos>
+    <conditions>
+      <eg12 condition="calo" particle="eg" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>06</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>D1</location>
+        <!--  <size>1</size> -->
+      </eg12>
+      <eg13 condition="calo" particle="eg" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>04</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>D2</location>
+        <!--  <size>1</size> -->
+      </eg13>
+      <eg11 condition="calo" particle="eg" type="2_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>07</value>
+          <value>05 </value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>D3</location>
+      </eg11>
+      <eg11_a condition="calo" particle="eg" type="2_s">
+        <et_threshold max="2F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>07</value>
+          <value>05</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>D4</location>
+      </eg11_a>
+      <ieg12 condition="calo" particle="ieg" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>06</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>C1</location>
+      </ieg12>
+      <ieg13 condition="calo" particle="ieg" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>04</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>C2</location>
+      </ieg13>
+      <ieg11 condition="calo" particle="ieg" type="2_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>07</value>
+          <value>05</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>C3</location>
+      </ieg11>
+      <deta condition="calo" particle="ieg" type="2_wsc">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>00</value>
+          <value>00</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+          <delta_eta>
+          <value max="3fff" min="0000">3fff</value>
+          <control>10</control>
+          </delta_eta>
+        <delta_phi max="3ff" min="000">
+          <value>3ff</value>
+        </delta_phi>
+        <location>B1</location>
+      </deta>
+      <dphi condition="calo" particle="ieg" type="2_wsc">
+        <et_threshold max="3F" min="00">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>00</value>
+          <value>00</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+          <delta_eta>                         
+          <value max="3fff" min="0000">3fff</value>
+          <control>10</control>
+        </delta_eta>
+        <delta_phi max="3ff" min="000">
+          <value>3ff</value>
+        </delta_phi>
+        <location>B2</location>
+      </dphi>
+      <deta1 condition="calo" particle="ieg" type="2_wsc">
+        <et_threshold max="3F" min="00">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>00</value>
+          <value>00</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <delta_eta>
+          <value max="3fff" min="0000">000f</value>
+          <control>10</control>
+        </delta_eta>
+        <delta_phi max="3ff" min="000">
+          <value>3ff</value>
+        </delta_phi>
+        <location>B3</location>
+      </deta1>
+      <cjet1a condition="calo" particle="jet" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>30</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>F1</location>
+      </cjet1a>
+      <cjet1b condition="calo" particle="jet" type="1_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>14</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+        </phi>
+        <location>F2</location>
+      </cjet1b>
+      <cjet2s condition="calo" particle="jet" type="2_s">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>20</value>
+          <value>20</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>F3</location>
+      </cjet2s>
+      <cjet4 condition="calo" particle="jet" type="4">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>02</value>
+          <value>02</value>
+          <value>02</value>
+          <value>02</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>F4</location>
+      </cjet4>
+<Muon_3s condition="muon" particle="muon" type="3">
+<pt_h_threshold min="00" max="1f">
+<ge_eq mode="bit">1</ge_eq>
+<value>13</value>
+<value>11</value>
+<value>10</value>
+</pt_h_threshold>
+<pt_l_threshold min="00" max="1f">
+<value>11<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0e<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0f<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+</pt_l_threshold>
+<eta min="0000000000000000" max="ffffffffffffffff">
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+</eta>
+<phi_h min="00" max="8f">
+<value>8f</value>
+<value>8f</value>
+<value>8f</value>
+</phi_h>
+<phi_l min="00" max="8f">
+<value>00</value>
+<value>00</value>
+<value>00</value>
+</phi_l>
+<charge_correlation min="0" max="7">0</charge_correlation>
+<quality min="00" max="ff">
+<value>00</value>
+<value>00</value>
+<value>00</value>
+</quality>
+<location>A3</location>
+</Muon_3s>
+<Muon_4s condition="muon" particle="muon" type="4">
+<pt_h_threshold min="00" max="1f">
+<ge_eq mode="bit">1</ge_eq>
+<value>13</value>
+<value>11</value>
+<value>10</value>
+<value>10</value>
+</pt_h_threshold>
+<pt_l_threshold min="00" max="1f">
+<value>11<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0e<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0f<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0e<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+</pt_l_threshold>
+<eta min="0000000000000000" max="ffffffffffffffff">
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+</eta>
+<phi_h min="00" max="8f">
+<value>8f</value>
+<value>8f</value>
+<value>8f</value>
+<value>8f</value>
+</phi_h>
+<phi_l min="00" max="8f">
+<value>00</value>
+<value>00</value>
+<value>00</value>
+<value>00</value>
+</phi_l>
+<charge_correlation min="0" max="7">0</charge_correlation>
+<quality min="00" max="ff">
+<value>00</value>
+<value>00</value>
+<value>00</value>
+<value>00</value>
+</quality>
+<location>A4</location>
+</Muon_4s>
+<Muon_1_1 condition="muon" particle="muon" type="1_s">
+<pt_h_threshold min="00" max="1f">
+<ge_eq mode="bit">1</ge_eq>
+<value>14</value>
+</pt_h_threshold>
+<pt_l_threshold min="00" max="1f">
+<value>10<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+</pt_l_threshold>
+<eta min="0000000000000000" max="ffffffffffffffff">
+<value>ffffffffffffffff</value>
+</eta>
+<phi_h min="00" max="8f">
+<value>8f</value>
+</phi_h>
+<phi_l min="00" max="8f">
+<value>00</value>
+</phi_l>
+<charge_correlation min="0" max="7">0</charge_correlation>
+<quality min="00" max="ff">
+<value>00</value>
+</quality>
+<location>A2</location>
+</Muon_1_1>
+<Muon_2_1 condition="muon" particle="muon" type="2_s">
+<pt_h_threshold min="00" max="1f">
+<ge_eq mode="bit">1</ge_eq>
+<value>10</value>
+<value>0f</value>
+</pt_h_threshold>
+<pt_l_threshold min="00" max="1f">
+<value>0f<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+<value>0e<en_mip mode="bit">0</en_mip>
+<en_iso mode="bit">1</en_iso>
+</value>
+</pt_l_threshold>
+<eta min="0000000000000000" max="ffffffffffffffff">
+<value>ffffffffffffffff</value>
+<value>ffffffffffffffff</value>
+</eta>
+<phi_h min="00" max="8f">
+<value>8f</value>
+<value>8f</value>
+</phi_h>
+<phi_l min="00" max="8f">
+<value>00</value>
+<value>00</value>
+</phi_l>
+<charge_correlation min="0" max="7">0</charge_correlation>
+<quality min="00" max="ff">
+<value>00</value>
+<value>00</value>
+</quality>
+<location>A1</location>
+</Muon_2_1>
+      <cjet4a condition="calo" particle="jet" type="4">
+        <et_threshold max="3F" min="0">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>02</value>
+          <value>02</value>
+          <value>02</value>
+          <value>02</value>
+        </et_threshold>
+        <eta max="7ffe" min="0000">
+          <value>7ffe</value>
+          <value>7ffe</value>
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="00000">
+          <value>3ffff</value>
+          <value>3ffff</value>
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <location>G1</location>
+      </cjet4a>
+
+      <!-- particle ... ett(total transversal energy), etm(missing transversal energy), htt() -->
+      <!-- type kommt nicht vor , ist immer 1 -->
+
+
+
+    </conditions>
+  </condition_chip_1>
+  <condition_chip_2>
+    <prealgos>
+      <c2_muon_test> (c2_jet1)<output_pin nr="1" pin="a"/>
+        <output_pin nr="0" pin="b"/>
+      </c2_muon_test>
+    </prealgos>
+    <conditions>
+      <c2_jet1 condition="calo" particle="jet" type="2_s">
+        <et_threshold max="3F" min="00" mode="hex">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>07</value>
+          <value>05</value>
+        </et_threshold>
+        <eta max="7ffe" min="0">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi max="3ffff" min="0">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <pre_algo>
+          <name/>
+          <name/>
+        </pre_algo>
+        <ok_flag/>
+        <location>E3</location>
+        <!--  <size>1</size> -->
+      </c2_jet1>
+    </conditions>
+  </condition_chip_2>
+</def>

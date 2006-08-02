@@ -1,0 +1,7 @@
+module gtModule = L1GlobalTrigger {
+   	
+    string triggerMenu = "lumi2x1033"
+//    string xmlConfig = "def_vA.xml"   	   	
+    string xmlConfig = "defrealv17.xml"   	   	
+    string xmlVME = ""   	   	
+}
