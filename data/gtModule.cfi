@@ -1,7 +1,19 @@
 module gtModule = L1GlobalTrigger {
    	
+   	// choose luminosity directory
     string triggerMenu = "lumi2x1033"
-//    string xmlConfig = "def_vA.xml"   	   	
-    string xmlConfig = "defrealv17.xml"   	   	
-    string xmlVME = ""   	   	
+    
+    // XML file for Global Trigger configuration 
+    string xmlConfig = "def_vA.xml"   	   	
+    // string xmlConfig = "defrealv17.xml"
+
+	// XML file for Global Trigger VME configuration      	   	
+    string xmlVME = ""
+    
+    // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
+	vuint32 inputMask = { 0, 0 }
+
+    // trigger mask: block the corresponding pin if bit value is 1 (aka true)
+	vuint32 triggerMask = { }
+	
 }

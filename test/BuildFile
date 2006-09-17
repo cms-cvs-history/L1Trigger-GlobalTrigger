@@ -1,0 +1,26 @@
+<use name=FWCore/Framework>
+<use name=Foundation/PluginManager>
+<use name=FWCore/ParameterSet>
+<use name=DataFormats/Common>
+<use name=DataFormats/L1GlobalTrigger>
+<use name=DataFormats/L1GlobalMuonTrigger>
+<use name=DataFormats/L1GlobalCaloTrigger>
+<use name=L1Trigger/L1GlobalTrigger>
+<use name=clhep>
+<use name=root>
+<library file=L1GtAnalyzer.cc name=L1GtAnalyzer>
+  <flags SEAL_PLUGIN_NAME="L1GtAnalyzer">
+</library>
+<export>
+   <lib name=L1GtAnalyzer>
+   <use name=FWCore/Framework>
+   <use name=Foundation/PluginManager>
+   <use name=FWCore/ParameterSet>
+   <use name=DataFormats/Common>
+   <use name=DataFormats/L1GlobalTrigger>
+   <use name=DataFormats/L1GlobalMuonTrigger>
+   <use name=DataFormats/L1GlobalCaloTrigger>
+   <use name=L1Trigger/L1GlobalTrigger>
+   <use name=clhep>
+   <use name=root>
+</export>
