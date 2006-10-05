@@ -9,8 +9,8 @@
  *   
  * \author: Vasile Mihai Ghete - HEPHY Vienna
  * 
- * $Date:$
- * $Revision:$
+ * $Date$
+ * $Revision$
  *
  */
 
@@ -22,7 +22,6 @@
 
 // user include files
 #include "DataFormats/L1GlobalTrigger/interface/L1GlobalTriggerReadoutRecord.h"
-#include "DataFormats/L1GlobalTrigger/interface/L1TriggerObject.h"
 
 #include "L1Trigger/GlobalTrigger/interface/L1GlobalTrigger.h"
 
@@ -70,6 +69,37 @@ void L1GtAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSet
 
     LogDebug("L1GtAnalyzer") << "\n**** L1GtAnalyzer::analyze starting ****\n" 
         << std::endl;
+
+    edm::Handle<L1GlobalTriggerReadoutRecord> gtReadoutRecord;
+    iEvent.getByLabel("gtModule", gtReadoutRecord);
+
+    /// get Global Trigger decision and the decision word
+    bool gtDecision = gtReadoutRecord->decision();
+    L1GlobalTriggerReadoutRecord::DecisionWord gtDecisionWord = gtReadoutRecord->decisionWord();
+
+    // print Global Trigger decision and the decision word
+    edm::LogVerbatim("L1GtAnalyzer") 
+        << "\n GlobalTrigger decision: " << gtDecision << std::endl;
+    
+    // print via supplied "print" function 
+    gtReadoutRecord->print();
+
+    // print technical trigger word via supplied "print" function 
+    gtReadoutRecord->printTechnicalTrigger();
+
+    // acces bit 
+    const unsigned int numberTriggerBits = L1GlobalTriggerReadoutRecord::NumberPhysTriggers;
+    
+    edm::LogVerbatim("L1GtAnalyzer") << std::endl;        
+    for (unsigned int iBit = 0; iBit < numberTriggerBits; ++iBit) {        
+        edm::LogVerbatim("L1GtAnalyzer") 
+            << "Bit " << iBit <<  ": triger bit = " << gtDecisionWord[iBit] << std::endl;        
+    }
+    
+    // print L1 objects
+    gtReadoutRecord->printL1Objects();
+    
+    
   
 }
 
