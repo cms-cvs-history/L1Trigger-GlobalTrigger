@@ -118,4 +118,4 @@ void L1GtAnalyzer::endJob() {
 
 
 //define this as a plug-in
-DEFINE_FWK_MODULE(L1GtAnalyzer)
+DEFINE_FWK_MODULE(L1GtAnalyzer);
