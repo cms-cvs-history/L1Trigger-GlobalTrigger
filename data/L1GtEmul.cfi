@@ -1,4 +1,4 @@
-module gtModule = L1GlobalTrigger {
+module L1GtEmul = L1GlobalTrigger {
    	
    	// choose luminosity directory
     string triggerMenu = "lumi2x1033"
@@ -15,5 +15,11 @@ module gtModule = L1GlobalTrigger {
 
     // trigger mask: block the corresponding pin if bit value is 1 (aka true)
 	vuint32 triggerMask = { }
+	
+	// number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
+	int32 totalBxInEvent = 3
+	
+	// input tag for GMT readout collection: gmt = GMT emulator, gtunpack = GT unpacker 
+	untracked InputTag GmtInputTag = gmt
 	
 }
