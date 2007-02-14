@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<def>
+  <header>
+    <vhdl_path>.</vhdl_path>
+    <gtl_setup_name>Trigger_Setup_3</gtl_setup_name>
+    <version min="00000000" max="ffffffff">00000000</version>
+    <designer_name>Vasile Ghete</designer_name>
+    <designer_date>Fri Jan 12 11:12:52 CET 2007</designer_date>
+    <designer_comments>Test conditions with spatial correlations</designer_comments>
+  </header>
+  <chip_def>
+    <chip_1>
+      <ca1>connected</ca1>
+      <ca2>connected</ca2>
+      <ca3>connected</ca3>
+      <ca4>connected</ca4>
+      <ca5>connected</ca5>
+      <ca6>connected</ca6>
+      <ca7>connected</ca7>
+      <ca8>connected</ca8>
+      <ca9>connected</ca9>
+      <ca10>connected</ca10>
+    </chip_1>
+    <chip_2>
+      <ca1>connected</ca1>
+      <ca2>connected</ca2>
+      <ca3>connected</ca3>
+      <ca4>connected</ca4>
+      <ca5>connected</ca5>
+      <ca6>connected</ca6>
+      <ca7>connected</ca7>
+      <ca8>connected</ca8>
+      <ca9>connected</ca9>
+      <ca10>connected</ca10>
+    </chip_2>
+  </chip_def>
+  <ca_input>
+    <ca1>ieg</ca1>
+    <ca2>eg</ca2>
+    <ca3>jet</ca3>
+    <ca4>fwdjet</ca4>
+    <ca5>tau</ca5>
+    <ca6>esums</ca6>
+    <ca7>jet_cnts</ca7>
+    <ca8>free</ca8>
+    <ca9>free</ca9>
+    <ca10>free</ca10>
+  </ca_input>
+  <algos/>
+  <condition_chip_1>
+    <prealgos>
+      <Algo_dummy>dummy<output_pin pin="b" nr="1"/>
+        <output_pin pin="a" nr="1"/>
+      </Algo_dummy>
+    </prealgos>
+    <conditions>
+      <dummy condition="calo" particle="eg" type="1_s">
+        <et_threshold min="00" max="3f">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>00</value>
+        </et_threshold>
+        <eta min="0000" max="7ffe">
+          <value>7ffe</value>
+        </eta>
+        <phi min="00000" max="3ffff">
+          <value>3ffff</value>
+        </phi>
+        <location>A0</location>
+      </dummy>
+    </conditions>
+  </condition_chip_1>
+  <condition_chip_2>
+    <prealgos>
+      <Algo_DoubleMuon_wsc>DoubleMuon_wsc<output_pin pin="b" nr="1"/>
+        <output_pin pin="a" nr="1"/>
+      </Algo_DoubleMuon_wsc>
+      <Algo_DoubleCJet_wsc>DoubleCJet_wsc<output_pin pin="b" nr="2"/>
+        <output_pin pin="a" nr="2"/>
+      </Algo_DoubleCJet_wsc>
+    </prealgos>
+    <conditions>
+      <DoubleMuon_wsc condition="muon" particle="muon" type="2_wsc">
+        <pt_h_threshold min="00" max="1f">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>0d</value>
+          <value>12</value>
+        </pt_h_threshold>
+        <pt_l_threshold min="00" max="1f">
+          <value>0c<en_mip mode="bit">0</en_mip>
+            <en_iso mode="bit">0</en_iso>
+            <request_iso mode="bit">0</request_iso>
+          </value>
+          <value>11<en_mip mode="bit">0</en_mip>
+            <en_iso mode="bit">0</en_iso>
+            <request_iso mode="bit">0</request_iso>
+          </value>
+        </pt_l_threshold>
+        <eta min="0000000000000000" max="ffffffffffffffff">
+          <value>ffffffffffffffff</value>
+          <value>ffffffffffffffff</value>
+        </eta>
+        <phi_h min="00" max="8f">
+          <value>8f</value>
+          <value>8f</value>
+        </phi_h>
+        <phi_l min="00" max="8f">
+          <value>00</value>
+          <value>00</value>
+        </phi_l>
+        <charge_correlation min="1" max="7">1</charge_correlation>
+        <quality min="00" max="ff">
+          <value>00</value>
+          <value>00</value>
+        </quality>
+        <delta_eta min="0000000000000000" max="ffffffffffffffff">
+          <value>000000ffffffffff</value>
+        </delta_eta>
+        <delta_phi min="0000000000000000000" max="1ffffffffffffffffff">
+          <value>1ffffffffffffffffff</value>
+        </delta_phi>
+        <location>A0</location>
+      </DoubleMuon_wsc>
+      <DoubleCJet_wsc condition="calo" particle="jet" type="2_wsc">
+        <et_threshold min="00" max="3f">
+          <ge_eq mode="bit">1</ge_eq>
+          <value>32</value>
+          <value>19</value>
+        </et_threshold>
+        <eta min="0000" max="7ffe">
+          <value>7ffe</value>
+          <value>7ffe</value>
+        </eta>
+        <phi min="00000" max="3ffff">
+          <value>3ffff</value>
+          <value>3ffff</value>
+        </phi>
+        <delta_eta min="0000" max="3fff">
+          <value>3ff8</value>
+        </delta_eta>
+        <delta_phi min="000" max="3ff">
+          <value>3e0</value>
+        </delta_phi>
+        <location>A0</location>
+      </DoubleCJet_wsc>
+    </conditions>
+  </condition_chip_2>
+</def>

@@ -1,27 +1,28 @@
 module L1GtEmul = L1GlobalTrigger {
-   	
+ 
    	// choose luminosity directory
     string triggerMenu = "lumi2x1033"
     
     // XML file for Global Trigger configuration 
-    string xmlConfig = "def_vA.xml"   	   	
+    //string xmlConfig = "def_vA.xml"   	   	
+    string xmlConfig = "defTestWsc.xml"   	   	
 
-	// XML file for Global Trigger VME configuration      	   	
+    // XML file for Global Trigger VME configuration      	   	
     string xmlVME = ""
     
     // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
-	vuint32 inputMask = { 0, 0 }
+    vuint32 inputMask = { 0, 0 }
 
     // trigger mask: block the corresponding pin if bit value is 1 (aka true)
-	vuint32 triggerMask = { }
+    vuint32 triggerMask = { }
 	
-	// number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
-	int32 totalBxInEvent = 3
-	
-	// input tag for GMT readout collection: gmt = GMT emulator, gtunpack = GT unpacker 
-	untracked InputTag GmtInputTag = gmt
-	
-	// input tag for GCT readout collections: gct = GCT emulator, gctUnpack = GCT unpacker 
-	untracked InputTag GctInputTag = gct
+    // number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
+    int32 totalBxInEvent = 3
+
+    // input tag for GMT readout collection: gmt = GMT emulator, gtunpack = GT unpacker 
+    untracked InputTag GmtInputTag = gmt
+
+    // input tag for GCT readout collections: gct = GCT emulator, gctUnpack = GCT unpacker 
+    untracked InputTag GctInputTag = gct
 	
 }
