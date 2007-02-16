@@ -4,8 +4,8 @@ module L1GtEmul = L1GlobalTrigger {
     string triggerMenu = "lumi2x1033"
     
     // XML file for Global Trigger configuration 
-    //string xmlConfig = "def_vA.xml"   	   	
-    string xmlConfig = "defTestWsc.xml"   	   	
+    string xmlConfig = "def_vA.xml"   	   	
+    //string xmlConfig = "defTestWsc.xml"   	   	
 
     // XML file for Global Trigger VME configuration      	   	
     string xmlVME = ""
