@@ -11,6 +11,6 @@ include "L1Trigger/GlobalTrigger/data/L1GtEmul.cfi"
 
 # 
 sequence L1MuCaloEmul = {l1muon, L1CaloEmuDigis}
-sequence L1MuCaloGtEmul = {L1MuCaloEmu, L1GtEmul}
+sequence L1MuCaloGtEmul = {L1MuCaloEmul, L1GtEmul}
 
 
