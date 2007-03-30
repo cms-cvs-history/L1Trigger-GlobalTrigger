@@ -1,0 +1,18 @@
+# Configuration fragment file for L1 Global Trigger
+
+# calorimeter emulator chain
+include "L1Trigger/GlobalCaloTrigger/data/L1CaloEmuDigis.cff"
+
+# muon emulator chain 
+#   depends on calorimeter chain
+include "L1Trigger/GlobalMuonTrigger/data/l1muon.cff"
+
+# Global Trigger emulator
+#   depends on calorimeter chain and muon chain
+include "L1Trigger/GlobalTrigger/data/L1GtEmul.cfi"
+
+# 
+sequence L1CaloMuEmul = {L1CaloEmuDigis, l1muon}
+sequence L1CaloMuGtEmul = {L1CaloMuEmul, L1GtEmul}
+
+
