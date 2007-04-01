@@ -10,6 +10,8 @@ module L1GtEmul = L1GlobalTrigger {
     // XML file for Global Trigger VME configuration      	   	
     string xmlVME = ""
     
+    
+    
     // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
     vuint32 inputMask = { 0, 0 }
 
@@ -18,6 +20,11 @@ module L1GtEmul = L1GlobalTrigger {
 
     // number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
     int32 totalBxInEvent = 3
+    
+    // list of active boards (actually 16 bits) - default: all active
+    uint32 ActiveBoards = 0xFFFF;
+    
+    
 
     // input tag for GMT readout collection: 
     //     gmt = GMT emulator
