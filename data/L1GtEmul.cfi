@@ -22,7 +22,7 @@ module L1GtEmul = L1GlobalTrigger {
     int32 totalBxInEvent = 3
     
     // list of active boards (actually 16 bits) - default: all active
-    uint32 ActiveBoards = 0xFFFF;
+    uint32 ActiveBoards = 0xFFFF
     
     
 
