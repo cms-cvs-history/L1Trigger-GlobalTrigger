@@ -21,9 +21,9 @@ module L1GtEmul = L1GlobalTrigger {
     // number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
     int32 totalBxInEvent = 3
     
-    // list of active boards (actually 16 bits) - default: all active
+    // list of active boards (actually 16 bits)
+    // default: all active 0xFFFF
     uint32 ActiveBoards = 0xFFFF
-    
     
 
     // input tag for GMT readout collection: 
