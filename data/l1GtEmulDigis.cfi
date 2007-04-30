@@ -1,4 +1,4 @@
-module L1GtEmul = L1GlobalTrigger {
+module l1GtEmulDigis = L1GlobalTrigger {
  
     // choose luminosity directory
     string triggerMenu = "lumi2x1033"
@@ -27,13 +27,13 @@ module L1GtEmul = L1GlobalTrigger {
     
 
     // input tag for GMT readout collection: 
-    //     gmt = GMT emulator
-    //     L1GtUnpack = GT unpacker (common GT/GMT unpacker)
-    untracked InputTag GmtInputTag = gmt
+    //     l1GmtEmulDigis = GMT emulator
+    //     L1GtUnpack     = GT unpacker (common GT/GMT unpacker)
+    untracked InputTag GmtInputTag = l1GmtEmulDigis 
 
     // input tag for GCT readout collections: 
-    //     L1GctEmuDigis = GCT emulator 
-    //     gctUnpack = GCT unpacker 
-    untracked InputTag GctInputTag = L1GctEmuDigis
+    //     l1GctEmulDigis = GCT emulator 
+    //     gctUnpack      = GCT unpacker 
+    untracked InputTag GctInputTag = l1GctEmulDigis
 
 }
