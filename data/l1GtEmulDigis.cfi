@@ -28,7 +28,7 @@ module l1GtEmulDigis = L1GlobalTrigger {
 
     // input tag for GMT readout collection: 
     //     l1GmtEmulDigis = GMT emulator
-    //     L1GtUnpack     = GT unpacker (common GT/GMT unpacker)
+    //     l1GtUnpack     = GT unpacker (common GT/GMT unpacker)
     untracked InputTag GmtInputTag = l1GmtEmulDigis 
 
     // input tag for GCT readout collections: 
