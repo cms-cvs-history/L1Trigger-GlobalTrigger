@@ -203,7 +203,8 @@ void L1GlobalTrigger::produce(edm::Event& iEvent, const edm::EventSetup& evSetup
 
     L1GtfeExtWord gtfeExtWordValue;
     gtfeExtWordValue.setBoardId(gtfeBoardId);
-    gtfeExtWordValue.setRecordLength(m_totalBxInEvent);
+    // cast int to boost::uint16_t (there are normally 3 or 5 BxInEvent)
+    gtfeExtWordValue.setRecordLength(static_cast<boost::uint16_t>(m_totalBxInEvent));
 
     // set the list of active boards
     gtfeExtWordValue.setActiveBoards(m_activeBoards);
