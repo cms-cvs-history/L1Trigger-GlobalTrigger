@@ -5,7 +5,6 @@ module l1GtEmulDigis = L1GlobalTrigger {
     
     // XML file for Global Trigger configuration 
     string xmlConfig = "def_vA.xml"              
-    //string xmlConfig = "defTestWsc.xml"              
 
     // XML file for Global Trigger VME configuration                 
     string xmlVME = ""
@@ -28,12 +27,12 @@ module l1GtEmulDigis = L1GlobalTrigger {
 
     // input tag for GMT readout collection: 
     //     l1GmtEmulDigis = GMT emulator
-    //     L1GtUnpack     = GT unpacker (common GT/GMT unpacker)
+    //     l1GtUnpack     = GT unpacker (common GT/GMT unpacker)
     untracked InputTag GmtInputTag = l1GmtEmulDigis 
 
     // input tag for GCT readout collections: 
     //     l1GctEmulDigis = GCT emulator 
-    //     gctUnpack      = GCT unpacker 
+    //     l1GctUnpack    = GCT unpacker 
     untracked InputTag GctInputTag = l1GctEmulDigis
 
 }
