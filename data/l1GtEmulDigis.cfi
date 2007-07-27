@@ -27,7 +27,7 @@ module l1GtEmulDigis = L1GlobalTrigger {
            1,       1,       1,       1,       1,       1,       1,       1
     }
        
-    // trigger mask: block the corresponding pin if bit value is 1 (aka true)
+    // trigger mask: block the corresponding algorithm if bit value is 1
     vuint32 triggerMask = { 
            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
            0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
