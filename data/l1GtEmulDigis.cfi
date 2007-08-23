@@ -1,7 +1,7 @@
 module l1GtEmulDigis = L1GlobalTrigger {
  
     // choose luminosity directory
-    string triggerMenu = "lumi1x1033"
+    string triggerMenu = "lumi1x1032"
     
     // XML file for Global Trigger configuration 
     string xmlConfig = "hltExercise2007.xml"              
