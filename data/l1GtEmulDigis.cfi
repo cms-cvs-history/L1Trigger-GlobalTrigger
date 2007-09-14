@@ -9,53 +9,11 @@ module l1GtEmulDigis = L1GlobalTrigger {
     // XML file for Global Trigger VME configuration                 
     string xmlVME = ""
     
-    // prescale factors
-    // to be moved to EventSetup
-    vint32 PrescaleFactors = {
-        1000,    1000,       1,       1,       1,       1,       1,   10000,    1000,     100,
-           1,       1,       1,       1,   10000,    1000,     100,     100,       1,       1,
-           1,       1,       1,   10000,       1,     100,       1,       1,       1,       1,
-           1,       1,       1,    1000,       1,       1,       1,       1,       1,       1,
-           1,       1,       1,   10000,       1,       1,       1,       1,       1,       1,
-           1,    1000,     100,     100,       1,       1,       1,       1,      20,       1,
-           1,       1,       1,       1,      20,       1,       1,       1,       1,       1,
-           1,       1,       1,       1,       1,       1,       1,       1,       1,       1,
-           1,       1,       1,       1,       1,       1,       1,       1,       1,       1,
-           1,       1,       1,       1,       1,       1,       1,       1,   10000,       1,
-           1,       1,       1,       1,       1,       1,       1,       1,       1,       1,
-           1,       1,       1,       1, 3000000, 3000000,       1,       1,       1,       1,
-           1,       1,       1,       1,       1,       1,       1,       1
-    }
-       
-    // trigger mask: block the corresponding algorithm if bit value is 1
-    vuint32 triggerMask = { 
-           0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-           0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-           0,     1,     1,     0,     1,     0,     0,     0,     0,     1,
-           1,     1,     1,     0,     1,     0,     0,     1,     1,     0,
-           0,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-           0,     0,     0,     1,     0,     0,     0,     0,     0,     0,
-           1,     0,     0,     0,     0,     0,     0,     0,     0,     0,
-           1,     1,     1,     1,     1,     1,     1,     1,     1,     1,
-           1,     1,     1,     1,     1,     0,     0,     1,     0,     1,
-           1,     1,     1,     1,     1,     1,     1,     1,     0,     0,
-           0,     0,     0,     1,     1,     1,     0,     1,     1,     1,
-           1,     1,     1,     0,     0,     0,     0,     0,     0,     0,
-           0,     0,     0,     0,     0,     0,     0,     0
-    }
-
-    
+    // temporary, will be replaced by active board: 
+    // GMT mask inactive, use ActiveBoards instead 
     // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
     vuint32 inputMask = { 0, 0 }
 
-
-    // number of bunch crossing in the GT readout record: 3 bx (standard), 5 bx (debug)
-    int32 totalBxInEvent = 3
-    
-    // list of active boards (actually 16 bits)
-    // default: all active 0xFFFF
-    uint32 ActiveBoards = 0xFFFF
-    
 
     // input tag for GMT readout collection: 
     //     l1GmtEmulDigis = GMT emulator
