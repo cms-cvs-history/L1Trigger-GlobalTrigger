@@ -4,7 +4,7 @@ module l1GtEmulDigis = L1GlobalTrigger {
     string triggerMenu = "lumi1x1032"
     
     // XML file for Global Trigger configuration 
-    string xmlConfig = "hltExercise2007.xml"              
+    string xmlConfig = "L1Menu2007.xml"              
 
     // XML file for Global Trigger VME configuration                 
     string xmlVME = ""
