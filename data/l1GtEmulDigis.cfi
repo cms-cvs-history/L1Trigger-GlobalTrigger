@@ -9,8 +9,7 @@ module l1GtEmulDigis = L1GlobalTrigger {
     // XML file for Global Trigger VME configuration                 
     string xmlVME = ""
     
-    // temporary, will be replaced by active board: 
-    // GMT mask inactive, use ActiveBoards instead 
+    // no more used: replaced by active board: 
     // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
     vuint32 inputMask = { 0, 0 }
 
@@ -24,5 +23,21 @@ module l1GtEmulDigis = L1GlobalTrigger {
     //     l1GctEmulDigis = GCT emulator 
     //     l1GctUnpack    = GCT unpacker 
     untracked InputTag GctInputTag = l1GctEmulDigis
+    
+    // logical flag to produce the L1 GT DAQ readout record
+    //     if true, produce the record
+    untracked bool ProduceL1GtDaqRecord = true
+    
+    // logical flag to produce the L1 GT EVM readout record
+    //     if true, produce the record
+    untracked bool ProduceL1GtEvmRecord = true
 
+    // logical flag to produce the L1 GT object map record
+    //     if true, produce the record
+    untracked bool ProduceL1GtObjectMapRecord = true
+
+    // logical flag to write the PSB content in the  L1 GT DAQ record
+    //     if true, write the PSB content in the record
+    untracked bool WritePsbL1GtDaqRecord = true
+    
 }
