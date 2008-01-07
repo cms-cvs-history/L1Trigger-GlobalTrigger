@@ -1,19 +1,5 @@
 module l1GtEmulDigis = L1GlobalTrigger {
  
-    // choose luminosity directory
-    string triggerMenu = "lumi1x1032"
-    
-    // XML file for Global Trigger configuration 
-    string xmlConfig = "L1Menu2007.xml"              
-
-    // XML file for Global Trigger VME configuration                 
-    string xmlVME = ""
-    
-    // no more used: replaced by active board: 
-    // input mask: bit 0 GCT, bit 1 GMT. Block GCT / GMT input if bit value is 1 (aka true) 
-    vuint32 inputMask = { 0, 0 }
-
-
     // input tag for GMT readout collection: 
     //     l1GmtEmulDigis = GMT emulator
     //     l1GtUnpack     = GT unpacker (common GT/GMT unpacker)
