@@ -1,14 +1,14 @@
 module gtDigis = L1GlobalTrigger {
  
     // input tag for GMT readout collection: 
-    //     l1GmtEmulDigis = GMT emulator
+    //     gmtDigis = GMT emulator
     //     l1GtUnpack     = GT unpacker (common GT/GMT unpacker)
-    untracked InputTag GmtInputTag = l1GmtEmulDigis 
+    untracked InputTag GmtInputTag = gmtDigis 
 
     // input tag for GCT readout collections: 
-    //     l1GctEmulDigis = GCT emulator 
+    //     gctDigis = GCT emulator 
     //     l1GctUnpack    = GCT unpacker 
-    untracked InputTag GctInputTag = l1GctEmulDigis
+    untracked InputTag GctInputTag = gctDigis
     
     // logical flag to produce the L1 GT DAQ readout record
     //     if true, produce the record
