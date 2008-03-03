@@ -9,6 +9,10 @@ module gtDigis = L1GlobalTrigger {
     //     gctDigis = GCT emulator 
     //     l1GctUnpack    = GCT unpacker 
     InputTag GctInputTag = gctDigis
+
+    // input tag for technical triggers: 
+    //     techTrigDigis = technical trigger emulator 
+    InputTag TechnicalTriggersInputTag = techTrigDigis
     
     // logical flag to produce the L1 GT DAQ readout record
     //     if true, produce the record
@@ -26,4 +30,7 @@ module gtDigis = L1GlobalTrigger {
     //     if true, write the PSB content in the record
     bool WritePsbL1GtDaqRecord = true
     
+    // logical flag to read the technical trigger records
+    //     if true, it will read via getMany the available records
+    bool ReadTechnicalTriggerRecords = true
 }
