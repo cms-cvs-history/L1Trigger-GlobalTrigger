@@ -33,4 +33,12 @@ module gtDigis = L1GlobalTrigger {
     // logical flag to read the technical trigger records
     //     if true, it will read via getMany the available records
     bool ReadTechnicalTriggerRecords = true
+    
+    // number of "bunch crossing in the event" (BxInEvent) to be emulated
+    // symmetric around L1Accept (BxInEvent = 0):
+    //    1 (BxInEvent = 0); 3 (F 0 1) (standard record); 5 (E F 0 1 2) (debug record)
+    // even numbers (except 0) "rounded" to the nearest lower odd number
+    // negative value: emulate TotalBxInEvent as given in EventSetup  
+    int32 EmulateBxInEvent = 3
+    
 }
