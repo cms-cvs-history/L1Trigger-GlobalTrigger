@@ -10,7 +10,7 @@ process = cms.Process("TestGlobalTrigger")
 
 # number of events to be processed and source file
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(25)
+    input = cms.untracked.int32(10)
 )
 
 process.source = cms.Source("PoolSource",
@@ -19,12 +19,20 @@ process.source = cms.Source("PoolSource",
 )
 
 #   /RelValQCD_Pt_80_120/CMSSW_2_1_8_STARTUP_V7_v1/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO
+#process.PoolSource.fileNames = [
+#       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/06C16DFA-9182-DD11-A4CC-000423D6CA6E.root',
+#       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/0A0241FB-9182-DD11-98E1-001617E30D40.root',
+#       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/12B41BA7-9282-DD11-9E7F-000423D94E70.root',
+#       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/14AD9BA0-9182-DD11-82D3-000423D987E0.root',
+#       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/1A5FD19D-9282-DD11-B0BB-000423D9970C.root'
+#]
+
+# /RelValQCD_Pt_80_120/CMSSW_2_1_10_IDEAL_V9_v2/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO
 process.PoolSource.fileNames = [
-       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/06C16DFA-9182-DD11-A4CC-000423D6CA6E.root',
-       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/0A0241FB-9182-DD11-98E1-001617E30D40.root',
-       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/12B41BA7-9282-DD11-9E7F-000423D94E70.root',
-       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/14AD9BA0-9182-DD11-82D3-000423D987E0.root',
-       '/store/relval/CMSSW_2_1_8/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/STARTUP_V7_v1/0003/1A5FD19D-9282-DD11-B0BB-000423D9970C.root'
+       '/store/relval/CMSSW_2_1_10/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/IDEAL_V9_v2/0000/046AC296-EC99-DD11-9691-000423D6A6F4.root',
+       '/store/relval/CMSSW_2_1_10/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/IDEAL_V9_v2/0000/08CF0B41-E599-DD11-B957-000423D98AF0.root',
+       '/store/relval/CMSSW_2_1_10/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/IDEAL_V9_v2/0000/10469277-E099-DD11-9F4C-000423D9890C.root',
+       '/store/relval/CMSSW_2_1_10/RelValQCD_Pt_80_120/GEN-SIM-DIGI-RAW-HLTDEBUG-RECO/IDEAL_V9_v2/0000/1C633A33-EA99-DD11-906A-001617DC1F70.root',
 ]
 
 # load and configure modules
@@ -43,7 +51,11 @@ process.load("L1Trigger.Configuration.L1DummyConfig_cff")
 #process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.lumi1031.L1Menu2008_2E31_Unprescaled_cff")
 #process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.lumi1x1032.L1MenuTestCondCorrelation_cff")
 #process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup_v3_Unprescaled_cff")
-process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup_v4_Unprescaled_cff")
+#process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup_v4_Unprescaled_cff")
+#process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup_v5_Unprescaled_cff")
+#process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup2_v1_Unprescaled_cff")
+process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.startup.L1Menu_startup2_v2_Unprescaled_cff")
+#process.load("L1TriggerConfig.L1GtConfigProducers.Luminosity.lumi1030.L1Menu_2008MC_2E30_Unprescaled_cff")
 
 # Global Trigger emulator
 process.load("L1Trigger.GlobalTrigger.gtDigis_cfi")
